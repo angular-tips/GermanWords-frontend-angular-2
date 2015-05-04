@@ -1,0 +1,17 @@
+<div class="jumbotron centered">
+  <h1>German words demo!</h1>
+  <p>Click the button below to get a random German word with its translation:</p>
+  <p><a class="btn btn-primary" role="button" (click)="getRandomWord()">Give me a word!</a></p>
+  <div *if="word">
+    <pre>Word: {{word.german}}</pre>
+    <pre *if="isAuth">Translation: {{word.english}}</pre>
+    <p *if="!isAuth">Please login below to see the translation</p>
+  </div>
+</div>
+<div *if="isAuth">
+  <p>Welcome back {{user.username}}</p>
+  <a href="#" (click)="logout($event)">Logout</a>
+</div>
+<div *if="!isAuth">
+  <a href="#" (click)="login($event)">Login</a>
+</div>
