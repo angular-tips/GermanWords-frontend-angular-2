@@ -14,7 +14,7 @@ export class App {
   constructor(router: Router) {
     router
       .config('/home', Home)
-      .then((_) => router.config('/login', Login, 'login'))
-      .then((_) => router.navigate('/home', 'home'));
+      .then(() => router.config('/login', Login))
+      .then(() => router.navigate('/home'));
   }
 }
